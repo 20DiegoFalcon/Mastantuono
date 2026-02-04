@@ -64,6 +64,7 @@
 
     <section id="historia">
         <h2>Historia</h2>
+        <br><img src="https://raw.githubusercontent.com/20DiegoFalcon/Mastantuono/main/images/2.jpg"></br>
         <p>
             El Manuel Rubio, fundado en 1981, es uno de los clubes más humildes de España.
             Ha competido durante décadas en Primera Regional y es conocido por su cantera y su afición fiel. 
@@ -82,6 +83,7 @@
 
     <section id="aficion">
         <h2>Afición</h2>
+        <br><img src="https://raw.githubusercontent.com/20DiegoFalcon/Mastantuono/main/images/4.jpg"></br>
         <p>
             Los Manolos es una de las aficiones más numerosas y leales del país, conocida por su apoyo incondicional
             tanto en casa como en cualquier estadio de España.
@@ -92,6 +94,59 @@
         <h2>Contacto</h2>
         <p>Puedes visitar la web oficial del club para más información: <strong>https://www.cdmanuelrubio.es/></p>
     </section>
+      <section id="contacto">
+        <h2>Gameplay</h2>
+        <p><div id="juego-adivina">
+  <h2>🎮 Adivina el número</h2>
+  <p>Estoy pensando en un número del 1 al 10</p>
+
+  <input type="number" id="numeroUsuario" min="1" max="10">
+  <button onclick="comprobarNumero()">Probar</button>
+
+  <p id="mensaje"></p>
+</div>
+
+<style>
+  #juego-adivina {
+    max-width: 300px;
+    padding: 15px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+  }
+
+  #juego-adivina button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  let numeroSecreto = Math.floor(Math.random() * 10) + 1;
+
+  function comprobarNumero() {
+    const input = document.getElementById("numeroUsuario");
+    const mensaje = document.getElementById("mensaje");
+    const numero = Number(input.value);
+
+    if (!numero) {
+      mensaje.textContent = "❌ Ingresa un número válido";
+      return;
+    }
+
+    if (numero === numeroSecreto) {
+      mensaje.textContent = "🎉 ¡Correcto! Adivinaste el número";
+      numeroSecreto = Math.floor(Math.random() * 10) + 1; // reinicia el juego
+      input.value = "";
+    } else {
+      mensaje.textContent = "❌ Incorrecto, intenta otra vez";
+    }
+  }
+</script>
+</p>
+    </section>
 
     <footer>
         © 2026 - Web dedicada al Manuel Rubio
@@ -100,3 +155,4 @@
 </body>
 
 </html>
+
